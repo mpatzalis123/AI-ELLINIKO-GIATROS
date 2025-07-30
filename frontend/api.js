@@ -1,6 +1,6 @@
 // 📁 js/api.js
 
-const BASE_URL = 'http://localhost:8000';
+const BASE_URL = 'https://ai-elliniko-giatros-1.onrender.com';
 
 // 🔹 Φόρτωση σεναρίων
 export async function fetchScenarios() {
