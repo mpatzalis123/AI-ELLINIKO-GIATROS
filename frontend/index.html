@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Νοσηλρομπότ 300MKULTRA</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Νοσηλρομπότ 300MKULTRA</h1>
+
+  <details open>
+    <summary>ℹ️ Οδηγίες</summary>
+    <p>• Επίλεξε ένα σενάριο από το αναδυόμενο μενού.</p>
+    <p>• Πληκτρολόγησε το μήνυμά σου για να ξεκινήσεις τη συνομιλία με τον AI Ασθενή.</p>
+    <p>• Ο ασθενής θα απαντά σύμφωνα με το σενάριο που έχεις επιλέξει.</p>
+    <p>• Μπορείς να επιλέξεις εάν θέλεις να γράφεις ή να μιλάς, και αν η απάντηση να είναι με κείμενο ή με φωνή.</p>
+    <p>• Όταν τελειώσεις, μπορείς να ζητήσεις αξιολόγηση της συνομιλίας.</p>
+    <p><i>Για περισσότερες οδηγίες... έλα σπίτι μου 😉</i></p>
+  </details>
+
+  <label for="scenarioSelect">🩺 Επέλεξε σενάριο:</label>
+  <select id="scenarioSelect"></select>
+
+  <div class="interaction-options" aria-label="Επιλογές interaction">
+    <strong>⚙️ Επιλογές Interaction</strong>
+
+    <p><u>Απάντηση νοσηλευτή:</u></p>
+    <label><input type="radio" name="nurseMode" value="text" checked> Κείμενο</label>
+    <label><input type="radio" name="nurseMode" value="speech"> Ομιλία & Κείμενο</label>
+
+    <p><u>Απάντηση ασθενούς:</u></p>
+    <label><input type="radio" name="patientMode" value="text" checked> 🔘 Κείμενο</label>
+    <label><input type="radio" name="patientMode" value="speech"> 🔘 Κείμενο & Ομιλία</label>
+  </div>
+
+  <h2 class="chatbot-title">Ο εικονικός τσατο ρομποτάς</h2>
+
+  <button id="endChatBtn" class="end-chat-btn">
+    <span id="endChatBtnText">🧠 Τερματισμός συνομιλίας & Λήψη Ανατροφοδότησης</span>
+  </button>
+
+  <div id="feedbackMessage" style="color: red; font-weight: 700; margin-top: 1rem; text-align: center; user-select: none;"></div>
+
+  <div id="welcomeBanner" class="banner-message">
+    💬 AI Patient interview 
+  </div>
+
+  <!-- 🧠 ΚΕΝΤΡΙΚΟ CHAT CONTAINER -->
+  <div id="chatContainer">
+    <!-- 💬 Μηνύματα -->
+    <div id="chatWindow" role="log" aria-live="polite" aria-relevant="additions"></div>
+
+    <!-- 🧪 Κουμπιά Εξετάσεων -->
+    <div id="examButtons">
+      <button id="physicalExamBtn" class="secondary-btn physical-btn">🩺 Φυσική Εξέταση</button>
+      <button id="diagnosticTestsBtn" class="secondary-btn diagnostic-btn">🔬 Διαγνωστικά Τεστ</button>
+    </div>
+
+    <!-- 📝 Input Περιοχή -->
+    <div id="input-area">
+      <textarea id="chatInput" rows="1" placeholder="Γράψε μήνυμα..."></textarea>
+      <button id="sendBtn"><span style="font-size: 1.2rem;">➤</span></button>
+    </div>
+  </div>
+
+  <!-- 📋 Modal container -->
+  <div id="modal-container"></div>
+
+  <script type="module" src="./main.js"></script>
+  <script type="module" src="./ui.js"></script>
+<script type="module" src="./state.js"></script>
+<script type="module" src="./api.js"></script>
+</body>
+</html>

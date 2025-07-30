@@ -1,0 +1,167 @@
+<!-- Modal Overlay -->
+<div id="feedbackModal" class="modal-overlay" style="display: none;">
+  <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+    <h2 id="modalTitle">Τερματισμός Συνομιλίας & Ανατροφοδότηση</h2>
+    <p class="instructions">
+      Παρακαλούμε εισάγετε τις 3 πιθανές νοσηλευτικές διαγνώσεις (κατά ΝANDA).<br>
+      Βοηθήστε μας να βελτιώσουμε την αξιολόγηση.
+    </p>
+
+    <form id="diagnosisForm" novalidate>
+      <div class="input-group">
+        <label for="diagnosis1">Διάγνωση 1</label>
+        <input type="text" id="diagnosis1" name="diagnosis1" placeholder="Πληκτρολογήστε τη διάγνωση 1" required />
+      </div>
+      <div class="input-group">
+        <label for="diagnosis2">Διάγνωση 2</label>
+        <input type="text" id="diagnosis2" name="diagnosis2" placeholder="Πληκτρολογήστε τη διάγνωση 2" required />
+      </div>
+      <div class="input-group">
+        <label for="diagnosis3">Διάγνωση 3</label>
+        <input type="text" id="diagnosis3" name="diagnosis3" placeholder="Πληκτρολογήστε τη διάγνωση 3" required />
+      </div>
+
+      <button type="submit" class="submit-btn">Υποβολή</button>
+      <button type="button" id="closeModalBtn" class="submit-btn" style="background-color: #ccc; color: #333; margin-top: 10px;">Κλείσιμο</button>
+
+      <div class="error-message" id="errorMessage">Παρακαλώ συμπληρώστε όλα τα πεδία.</div>
+    </form>
+  </div>
+</div>
+
+<style>
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    max-width: 480px;
+    width: 90%;
+    padding: 30px 35px;
+    box-sizing: border-box;
+    animation: fadeInScale 0.3s ease forwards;
+  }
+
+  @keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(0.85); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  h2 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-weight: 700;
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .instructions {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 25px;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .input-group {
+    margin-bottom: 18px;
+  }
+
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #34495e;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+
+  input[type="text"]:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    background-color: #2980b9;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    background-color: #1c5980;
+  }
+
+  .error-message {
+    color: #e74c3c;
+    font-weight: 600;
+    margin-top: 10px;
+    text-align: center;
+    display: none;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('feedbackModal');
+    const form = document.getElementById('diagnosisForm');
+    const errorMessage = document.getElementById('errorMessage');
+    const closeBtn = document.getElementById('closeModalBtn');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const d1 = form.diagnosis1.value.trim();
+      const d2 = form.diagnosis2.value.trim();
+      const d3 = form.diagnosis3.value.trim();
+
+      if (!d1 || !d2 || !d3) {
+        errorMessage.style.display = 'block';
+        return;
+      }
+
+      errorMessage.style.display = 'none';
+      modal.style.display = 'none'; // ✅ Κλείνει το modal
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+  });
+
+  // ✅ Exported για main.js
+  window.showModal = () => {
+    const modal = document.getElementById('feedbackModal');
+    if (modal) modal.style.display = 'flex';
+  };
+
+  window.hideModal = () => {
+    const modal = document.getElementById('feedbackModal');
+    if (modal) modal.style.display = 'none';
+  };
+</script>

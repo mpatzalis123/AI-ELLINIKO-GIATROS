@@ -1,0 +1,104 @@
+case_id: kseno
+diagnosis: Intermittent Atrial Fibrillation
+
+ai_prompt: |
+  You are a 58-year-old man named George. You're visiting the doctor because you've been feeling your heart skip beats. These episodes started 3 weeks ago and are happening more often — now several times a day. They last about 10-15 minutes. You haven't passed out or had chest pain, but you're getting worried.
+
+  You have high blood pressure but never treated it. You recently started taking Claritin for allergies. You're stressed from work and wonder if that’s related.
+
+  You’re cooperative, honest, and a little anxious. You want to know what's going on. 
+  If the doctor is rude or disinterested, don’t argue — respond calmly or say you don’t feel heard.
+  
+  Speak naturally and simply, like a real patient. Don’t use medical jargon.
+  Do **not** say “I’m here to help” or “How can I assist you?” — you are a patient, not an AI assistant.
+
+
+patient_demographics:
+  age: 58
+  sex: male
+
+presenting_complaint: "I feel my heart skipping beats."
+
+history_of_present_illness: |
+  The symptoms started about 3 weeks ago. I feel my heart skipping off and on. The episodes last for 10-15 minutes. The first few days it only happened once or twice a day, but the frequency has increased and now it happens every couple of hours. I’ve never had anything like this previously. I can’t tell if it’s going faster or slower than usual. I have not tried to take my pulse. I have not felt light-headed or passed out. I haven’t noticed that anything seems to trigger these episodes. I have not found there is anything I can do to make the symptoms go away. The episodes just resolve spontaneously. I think it’s probably due to increased stress at work, but I want to be sure it’s nothing more serious.
+
+past_medical_history: |
+  20 years ago I was in the emergency department for a minor laceration and was told my blood pressure was pretty high. I checked it a couple of times with a friend’s home blood pressure cuff in the past 5 years and those readings were high as well, but I have never taken medications for it and rarely see a doctor. I’ve always felt fine, so I didn’t worry too much about it. I do get allergies this time of year when there is a lot of pollen in the air. I get watery eyes and my nose gets a little stuffy and I find myself clearing my throat a lot. I had surgery to remove my appendix when I was 14 years old, but no other surgeries or hospitalizations.
+
+medications_and_allergies:
+  medications: "Sometimes take over-the-counter Claritin for allergies; started taking one pill daily about a week ago."
+  allergies: "Reported reaction to penicillin as a toddler, details unclear."
+
+family_history: |
+  My father had hypertension and died of a stroke in his 60s. He was not compliant with blood pressure medications. No cancer, diabetes, or mental illness in father. Mother died in a car accident at age 41, previously healthy. No siblings. Son aged 35 in good health with no cancer, diabetes, heart disease, or mental illness.
+
+social_history: |
+  Smoked cigarettes for about 20 years, quit at age 40. Smoked about half a pack per day. Drinks beer occasionally (a couple times a month). Lives with wife in good health. Works as software programmer. No recreational drug use. Drinks one cup of coffee on workdays.
+
+review_of_systems:
+  constitutional: "No fevers, chills, sweats, appetite changes, fatigue, weakness, or sleep problems. Gained 5 pounds over past year, attributed to less walking due to foot pain."
+  eyes: "No recent vision changes. Some redness, irritation, watery discharge for past week."
+  ears_nose_throat: "No ear pain, tinnitus, sinus pressure, or sore throat."
+  cardiovascular: "No chest pain, pressure, palpitations, lightheadedness, syncope, or dyspnea at rest or exertion. No nocturnal dyspnea or peripheral edema."
+  respiratory: "No cough, no dyspnea at rest or exertion, no sputum or hemoptysis. Occasional snoring per wife."
+  gastrointestinal: "No abdominal pain, indigestion, heartburn, nausea, vomiting, diarrhea, constipation, blood in stool, or bowel habit changes."
+  genitourinary: "No dysuria, frequency, urgency, hesitancy, or hematuria."
+  musculoskeletal: "No muscle pain or weakness. Feet joints hurt with prolonged walking but no swelling. No arthritis diagnosis. No stiffness, back or neck pain, or restless legs."
+  integument: "No rash, sores, dryness, itching, color change, or new lesions."
+  neurological: "No headache, numbness, weakness, speech difficulties, seizures, balance or coordination problems, tremor, memory or concentration issues."
+  psychiatric: "No depression, suicidal or violent thoughts, hallucinations, paranoia, or intrusive thoughts. Occasional anxiety with work stress."
+  endocrine: "No heat or cold intolerance, increased thirst, appetite or weight changes."
+  heme_lymphatic: "No easy bruising, bleeding, or swollen lymph nodes."
+  allergic_immunologic: "No hives, hay fever, or recurrent infections. Reacts to heavy pollen counts with red watery eyes, nasal congestion, frequent throat clearing."
+
+physical_examination:
+  vital_signs:
+    pulse: 80 regular
+    respiratory_rate: 14
+    temperature_celsius: 36.3
+    blood_pressure_mmHg: 158/104
+  HEENT: |
+    Normocephalic, atraumatic. Extraocular movements normal. Mild conjunctival injection, sclera normal. Pupils equal, round, reactive. Fundoscopic exam shows extensive AV nicking. Nasal mucosa inflamed and erythematous. No sinus tenderness. Oropharynx normal, moist, no exudates. Dentition intact with few fillings. External ear and canal normal. Tympanic membrane partly visualized due to cerumen, normal portion.
+  neck: "Trachea midline, thyroid normal size, symmetric, non-tender, normal ROM, no palpable nodes."
+  thorax_lungs: "Normal chest excursion, no tenderness, clear auscultation."
+  cardiovascular: "Regular rate and rhythm, normal S1/S2, no murmurs, rubs, gallops. PMI displaced 2cm left of midclavicular line, 3cm size."
+  abdomen: "Flat, appendectomy scar, active bowel sounds, no tenderness or masses, spleen not palpable."
+  musculoskeletal: "No abnormal spinal curvature, good ROM in shoulders and knees, no swelling or deformity."
+  neurological:
+    mental_status: "Alert, cooperative, oriented to person, place, time. Speech clear."
+    memory: intact
+    cranial_nerves:
+      II: "Visual acuity 20/20 both eyes, visual fields full"
+      III_IV_VI: "Extraocular movements intact"
+      V: "Sensation to pinprick intact bilaterally"
+      VII: "Facial muscles intact"
+      VIII: "Hearing to finger rub"
+      IX_X: "Palate elevation symmetrical"
+      XI: "SCM and shoulder shrug strength intact"
+      XII: "Tongue midline on protrusion"
+    motor: "Muscle strength 5/5 all extremities"
+    sensory: "Pin-prick and vibration intact all extremities"
+    reflexes: "Triceps, biceps, brachioradialis, patella, ankle 2/4 bilaterally"
+    plantar_reflexes: "Downgoing"
+    coordination_gait: "Romberg negative, steady gait"
+
+diagnostic_studies:
+  EKG: "Rate 78, normal sinus rhythm, QRS axis -28, moderate LVH, no pathological Q waves or ST-T changes, normal QT."
+  CXR: "Mild cardiomegaly, clear lung fields, no bony abnormalities."
+  Holter_monitor: "Intermittent atrial fibrillation at 110-130 bpm correlating with symptoms."
+
+differential_diagnosis:
+  - Anxiety
+  - Intermittent Atrial Fibrillation
+  - Intermittent Premature Atrial Contractions
+  - Intermittent Premature Ventricular Contractions
+
+diagnostic_criteria: "Presence of atrial fibrillation coinciding with patient symptoms confirms diagnosis."
+
+clinical_questions:
+  - "What aspects of the patient’s history make atrial fibrillation more likely?"
+  - "How does long-standing hypertension contribute to atrial fibrillation risk?"
+  - "What physical exam findings support hypertensive heart disease?"
+
+discussion_teaching_points: |
+  Underlying heart disease is common in atrial fibrillation patients. Although hypertension modestly raises AF risk, its high prevalence makes hypertensive heart disease the most common underlying condition associated with AF. Physical signs like AV nicking and LVH support this connection.
